@@ -21,7 +21,7 @@ const Login = () => {
 
   return (
     <div className="flex h-screen">
-      <div className="w-1/2 flex items-center justify-center bg-blue-200">
+      <div className="w-1/2 flex items-center justify-center bg-[#315259] ">
         <div className="text-center text-white p-8">
           <img
             src={illustration}
@@ -41,11 +41,18 @@ const Login = () => {
           <h2 className="text-2xl font-bold mb-4 text-gray-800 flex items-center">Bem vindo!</h2>
           <p className="text-login text-gray-600 mb-6">Entre com seu e-mail e senha para acessar sua conta.</p>
 
+             {/* Cadastro de usuarios*/}
+          <div className="register">
+              <Link to="/Register" className="text-purple-600">
+                Não possui conta? <span className="font-bold">Registre-se Grátis</span>
+              </Link>
+            </div>
+
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <input
                 type="email"
-                placeholder="Digite seu E-MAIL"
+                placeholder="Digite seu e-mail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -55,7 +62,7 @@ const Login = () => {
             <div className="mb-4 relative">
               <input
                 type={showPassword ? "text" : "password"}
-                placeholder="Sua SENHA"
+                placeholder="Digite a sua Senha"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
@@ -70,14 +77,12 @@ const Login = () => {
             </div>
 
                {/* Formulario de Login */}
-            <div className="flex justify-between text-sm text-gray-500 mb-6">
-              <Link to="/recuperar-senha" className="text-purple-600">
-                Esqueceu sua <span className="font-bold">Senha?</span>
-              </Link>
-              <Link to="/cadastro" className="text-purple-600">
-                Não possui conta? <span className="font-bold">Experimente Grátis</span>
-              </Link>
-            </div>
+               <div className="flex justify-end text-sm text-gray-600 mb-6">
+               <Link to="/recuperar-senha" className="text-gray-600">
+                Esqueceu sua <span className="font-bold">Senha?</span> </Link>
+                </div>
+             
+             
 
             <button type="submit" className="login-button">
             Entrar

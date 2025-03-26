@@ -132,3 +132,9 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
+
+.register {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
